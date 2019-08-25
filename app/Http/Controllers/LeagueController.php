@@ -15,17 +15,20 @@ class LeagueController extends Controller
 
     public function updateMatches()
     {
-        return view('includes.matches');
+        $league = League::findorfail(1);
+        return view('includes.matches', compact('league'));
     }
 
     public function updatePredictions()
     {
-        return view('includes.predictions');
+        $league = League::findorfail(1);
+        return view('includes.predictions', compact('league'));
     }
 
     public function updateStandings()
     {
-        return view('includes.standings');
+        $league = League::findorfail(1);
+        return view('includes.standings', compact('league'));
     }
 
     public function nextWeek(){

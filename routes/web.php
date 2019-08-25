@@ -17,3 +17,4 @@ Route::get('/matches/', 'LeagueController@updateMatches')->name('update-matches'
 Route::get('/predictions/', 'LeagueController@updatePredictions')->name('update-predictions');
 Route::get('/standings/', 'LeagueController@updateStandings')->name('update-standings');
 Route::get('/next-week/', 'LeagueController@nextWeek')->name('next-week');
+Route::get('/simulate/', 'LeagueController@simulate')->name('simulate');

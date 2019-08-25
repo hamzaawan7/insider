@@ -11,7 +11,7 @@
                             <div class="col-lg-3">
                                 <h3>
                                     <img src="{{ $league->logo_path }}"
-                                        alt="Egyptian league" width="40px">
+                                         alt="Egyptian league" width="40px">
                                     {{ $league->name }}
                                 </h3>
                             </div>
@@ -49,7 +49,7 @@
                         <div class="col-12">
                             <h6 class="section-title">Fixture Results</h6>
                         </div>
-                        <div class="col-12" id="matches-info">
+                        <div class="col-12" id="matches">
                             @include('includes.matches', ['league' => $league])
                         </div>
 
@@ -121,7 +121,19 @@
 @if(!empty($play_all))
 @section('scripts')
     <script type="text/javascript">
-        var auto_refresh = setInterval(
+        var i = 0;
+        var auto_refresh1 = setInterval(
+            function () {
+                var url = "{{ route('simulate') }}";
+                $.ajax({
+                    url: url,
+                    success: function () {
+                        i++;
+                    }
+                });
+            }, 5000
+        );
+        var auto_refresh2 = setInterval(
             function () {
                 var matches_url = "{{ route('update-matches') }}";
                 var standings_url = "{{ route('update-standings') }}";

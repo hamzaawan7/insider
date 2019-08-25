@@ -34,6 +34,10 @@ class League
 
     public function runSimulation()
     {
+        if ($this->match_week == 6) {
+            $this->leagueCompleted();
+            return;
+        }
         foreach ($this->matches as $match) {
             $match->play();
         }
@@ -62,6 +66,7 @@ class League
 
     private function updateWeek()
     {
+        $this->match_week = $this->league->next_week_id;
         $this->league->current_week_id = $this->league->next_week_id;
         if ($this->league->next_week_id < 6) {
             $this->league->next_week_id = $this->league->next_week_id + 1;
@@ -83,5 +88,11 @@ class League
                 $prediction->save();
             }
         }
+    }
+
+    private function leagueCompleted()
+    {
+        $this->league->status = 1;
+        $this->league->save();
     }
 }
