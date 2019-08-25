@@ -8,7 +8,7 @@
                 <td class="column-team">
                     <img src="{{ $team->logo_path }}"> {{ $team->name }}
                 </td>
-                <td class="column-score">{{ $team->teamPrediction->percentage }}%</td>
+                <td class="column-score">{{ round($team->teamPrediction->percentage, 2) }}%</td>
                 <td class="column-over">{{ $team->standing->position }}</td>
             </tr>
         @endforeach

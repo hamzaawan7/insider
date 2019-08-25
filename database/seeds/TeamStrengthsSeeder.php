@@ -16,30 +16,30 @@ class TeamStrengthsSeeder extends Seeder
         $data = [
             [
                 'team_id' => '1',
-                'defense' => rand(81, 95),
-                'mid' => rand(81, 95),
-                'attack' => rand(81, 95),
+                'defense' => rand(85, 95),
+                'mid' => rand(85, 95),
+                'attack' => rand(85, 95),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'team_id' => '2',
-                'defense' => rand(81, 95),
-                'mid' => rand(81, 95),
-                'attack' => rand(81, 95),
+                'defense' => rand(85, 95),
+                'mid' => rand(85, 95),
+                'attack' => rand(85, 95),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'team_id' => '3',
-                'defense' => rand(81, 95),
-                'mid' => rand(81, 95),
-                'attack' => rand(81, 95),
+                'defense' => rand(85, 95),
+                'mid' => rand(85, 95),
+                'attack' => rand(85, 95),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'team_id' => '4',
-                'defense' => rand(81, 95),
-                'mid' => rand(81, 95),
-                'attack' => rand(81, 95),
+                'defense' => rand(85, 95),
+                'mid' => rand(85, 95),
+                'attack' => rand(85, 95),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]
         ];

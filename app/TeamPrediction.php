@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
+ * @property integer $league_id
  * @property integer $team_id
  * @property int $percentage
  * @property string $created_at
@@ -16,7 +17,7 @@ class TeamPrediction extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -24,7 +25,7 @@ class TeamPrediction extends Model
     /**
      * @var array
      */
-    protected $fillable = ['team_id', 'percentage', 'created_at', 'updated_at'];
+    protected $fillable = ['league_id', 'team_id', 'percentage', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -32,5 +33,13 @@ class TeamPrediction extends Model
     public function team()
     {
         return $this->belongsTo('App\Team');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function league()
+    {
+        return $this->belongsTo('App\League');
     }
 }

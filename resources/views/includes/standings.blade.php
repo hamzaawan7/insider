@@ -17,7 +17,7 @@
         <tbody>
         @foreach($league->standings as $standing)
             <tr>
-                <td class="column-serial">{{ $standing->position }}</td>
+                <td class="column-serial">{{ $loop->iteration }}</td>
                 <td class="column-team">
                     <a href="javascript:void(0)">
                         <img src="{{ $standing->team->logo_path }}"> {{ $standing->team->name }}

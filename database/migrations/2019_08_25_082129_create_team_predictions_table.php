@@ -15,8 +15,9 @@ class CreateTeamPredictionsTable extends Migration
     {
         Schema::create('team_predictions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('league_id')->unsigned();
             $table->bigInteger('team_id')->unsigned();
-            $table->integer('percentage')->default(25);
+            $table->double('percentage')->default(25);
             $table->timestamps();
         });
 
@@ -24,6 +25,11 @@ class CreateTeamPredictionsTable extends Migration
             $table->foreign('team_id')
                 ->references('id')
                 ->on('teams')
+                ->onDelete('cascade');
+
+            $table->foreign('league_id')
+                ->references('id')
+                ->on('leagues')
                 ->onDelete('cascade');
         });
     }

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Match[] $matches
  * @property Standing[] $standings
  * @property Team[] $teams
+ * @property TeamPrediction[] $teamPredictions
  */
 class League extends Model
 {
@@ -71,5 +72,13 @@ class League extends Model
     public function teams()
     {
         return $this->hasMany('App\Team');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teamPredictions()
+    {
+        return $this->hasMany('App\TeamPrediction');
     }
 }

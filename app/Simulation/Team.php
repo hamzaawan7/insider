@@ -6,10 +6,10 @@ namespace App\Simulation;
 
 class Team extends League
 {
-    protected $team_id;
+    protected $team;
 
-    public function __construct($id)
+    public function __construct($t)
     {
-        $this->team_id = $id;
+        $this->team = $t;
     }
 }

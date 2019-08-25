@@ -6,20 +6,19 @@ namespace App\Simulation;
 
 class Match extends League
 {
-    private $match_id;
+    private $match;
 
-    public function __construct($id)
+    public function __construct($match)
     {
-        $this->match_id = $id;
+        $this->match = $match;
     }
 
     public function play()
     {
-        $match = \App\Match::find($this->match_id);
-        $match->home_team_score = $this->calculateTeamGoal($match->homeTeam, $match->visitorTeam, 1);
-        $match->visitor_team_score = $this->calculateTeamGoal($match->visitorTeam, $match->homeTeam, 2);
-        $match->status = 1;
-        $match->save();
+        $this->match->home_team_score = $this->calculateTeamGoal($this->match->homeTeam, $this->match->visitorTeam, 1);
+        $this->match->visitor_team_score = $this->calculateTeamGoal($this->match->visitorTeam, $this->match->homeTeam, 2);
+        $this->match->status = 1;
+        $this->match->save();
     }
 
     private function calculateTeamGoal($team1, $team2, $home_team)

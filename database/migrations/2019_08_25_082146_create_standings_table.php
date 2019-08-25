@@ -17,7 +17,6 @@ class CreateStandingsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('league_id')->unsigned();
             $table->bigInteger('team_id')->unsigned();
-            $table->integer('position');
             $table->integer('games_played')->default(0);
             $table->integer('wins')->default(0);
             $table->integer('lost')->default(0);

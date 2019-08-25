@@ -10,8 +10,7 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <h3>
-                                    <img
-                                        src="{{ $league->logo_path }}"
+                                    <img src="{{ $league->logo_path }}"
                                         alt="Egyptian league" width="40px">
                                     {{ $league->name }}
                                 </h3>
