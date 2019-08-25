@@ -76,15 +76,13 @@ class League
 
     private function roundPredictions()
     {
-        foreach ($this->league->teamPredictions as $prediction) {
-            if ($prediction->percentage < 0) {
-                $subtraction_percent = $prediction->percentage / 3;
-                $other_predictions = \App\TeamPrediction::where('team_id', '<>', $prediction->team_id)->get();
-                foreach ($other_predictions as $other_prediction) {
-                    $other_prediction->percentage = $other_prediction->percentage - $subtraction_percent;
-                    $other_prediction->save();
-                }
-                $prediction->percentage = 0;
+        $total_percentage = $this->league->teamPredictions->sum('percentage');
+        if($total_percentage > 100){
+            $predictions = \App\TeamPrediction::where('percentage', '<>', 0)->get();
+            $total = count($predictions);
+            $subtraction_percent = ($total_percentage - 100) / 2;
+            foreach ($predictions as $prediction){
+                $prediction = $prediction - $subtraction_percent;
                 $prediction->save();
             }
         }

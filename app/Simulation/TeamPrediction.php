@@ -32,6 +32,9 @@ class TeamPrediction extends League
                 break;
             case "L":
                 $percentage = $percentage - 12.5;
+                if($percentage < 0){
+                    $percentage = 0;
+                }
                 break;
         }
         return $percentage;

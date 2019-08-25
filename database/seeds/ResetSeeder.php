@@ -41,27 +41,27 @@ class ResetSeeder extends Seeder
         ]);
 
         DB::table('team_strengths')->where('team_id', 1)->update([
-            'defense' => rand(85, 95),
-            'mid' => rand(85, 95),
-            'attack' => rand(85, 95),
+            'defense' => rand(85, 92),
+            'mid' => rand(85, 92),
+            'attack' => rand(85, 92),
         ]);
 
         DB::table('team_strengths')->where('team_id', 2)->update([
-            'defense' => rand(85, 95),
-            'mid' => rand(85, 95),
-            'attack' => rand(85, 95),
+            'defense' => rand(85, 92),
+            'mid' => rand(85, 92),
+            'attack' => rand(85, 92),
         ]);
 
         DB::table('team_strengths')->where('team_id', 3)->update([
-            'defense' => rand(85, 95),
-            'mid' => rand(85, 95),
-            'attack' => rand(85, 95),
+            'defense' => rand(85, 92),
+            'mid' => rand(85, 92),
+            'attack' => rand(85, 92),
         ]);
 
         DB::table('team_strengths')->where('team_id', 4)->update([
-            'defense' => rand(85, 95),
-            'mid' => rand(85, 95),
-            'attack' => rand(85, 95),
+            'defense' => rand(85, 92),
+            'mid' => rand(85, 92),
+            'attack' => rand(85, 92),
         ]);
     }
 }
